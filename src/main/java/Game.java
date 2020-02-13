@@ -25,11 +25,12 @@ public class Game {
     }
 
     public Person findWinner(){
-        int winningCard = 0;
-        Person winner = new Person("WHATEVER");
+        int winningScore = 0;
+        Person winner = null;
         for (Person player : players) {
             int cardScore = Score.getValue(player.getCard());
-            if (cardScore > winningCard) {
+            if (cardScore > winningScore) {
+                winningScore = cardScore;
                 winner = player;
             }
         }
